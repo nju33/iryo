@@ -1,0 +1,17 @@
+{
+  "extends": "@nju33/tsconfig-react-module",
+  "include": ["pages"],
+  "exclude": [],
+  "compilerOptions": {
+    "lib": ["es2015", "es2016", "es2017", "dom"],
+    "downlevelIteration": true,
+    "jsx": "preserve",
+    "typeRoots": ["./node_modules/@types", "../node_modules/@types"],
+    "baseUrl": "../../packages",
+    "paths": {
+      "iryo": [
+        "iryo/src/index.ts"
+      ],
+    }
+  }
+}
