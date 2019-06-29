@@ -38,3 +38,7 @@ metaDescription.content = 'foo';
 // It eliminate its meta element
 metaDescription.content = '';
 ```
+
+## Sandbox
+
+[![Edit @example/iryo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/nju33/iryo/tree/%40example%2Firyo/?fontsize=14)

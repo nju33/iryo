@@ -17,7 +17,7 @@
     "build": "lerna run build --stream --no-private",
     "publish": "lerna publish",
     "postpublish": "run-s push:*",
-    "push:example": "gh-pages --dist examples/iryo --src '{pages/**,*}' --branch @example/iryo --dotfiles"
+    "push:example": "gh-pages --dist examples/iryo --src '{.circleci/**,pages/**,*}' --branch @example/iryo --dotfiles"
   },
   "devDependencies": {
     "@nju33/eslint-config": "0.0.26",
