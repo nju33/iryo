@@ -8,6 +8,9 @@
 
 ## Usage
 
+- [Style](#style)
+- [Meta](#meta)
+
 ### Style
 
 ```js
