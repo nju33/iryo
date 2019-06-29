@@ -1,7 +1,7 @@
 {
   "name": "iryo",
   "description": "A injecter for html element",
-  "version": "0.0.2-alpha.0",
+  "version": "0.0.2",
   "main": "dist/main/index.js",
   "types": "dist/types/index.d.ts",
   "module": "dist/module/index.js",
