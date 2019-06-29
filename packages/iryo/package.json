@@ -34,5 +34,6 @@
   },
   "alias": {
     "iryo": "./src/index.ts"
-  }
+  },
+  "gitHead": "46686d4f6243585bea28f3473385a0c8793492a2"
 }
