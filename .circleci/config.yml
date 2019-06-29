@@ -1,0 +1,61 @@
+version: 2.1
+
+executors:
+  node:
+    docker:
+      - image: circleci/node:10
+
+commands:
+  yarn_install:
+    parameters:
+      re_install:
+        type: boolean
+        default: true
+    steps:
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - when:
+          condition: << parameters.re_install >>
+          steps:
+            - run: yarn install
+            - save_cache:
+                paths:
+                  - examples/iryo/node_modules
+                  - packages/iryo/node_modules
+                  - node_modules
+                key: v1-dependencies-{{ checksum "yarn.lock" }}-{{ checksum "package.json" }}
+  yarn_test:
+    steps:
+      - run: yarn test
+
+jobs:
+  prepare:
+    executor:
+      name: node
+    steps:
+      - checkout
+      - yarn_install
+  test:
+    executor:
+      name: node
+    steps:
+      - checkout
+      - yarn_install:
+          re_install: false
+      - yarn_test
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - prepare:
+          filters:
+            branches:
+              ignore:
+                - example
+                - docs
+      - test:
+          requires:
+            - prepare

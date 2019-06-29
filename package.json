@@ -1,0 +1,36 @@
+{
+  "private": true,
+  "description": "A Injecter for html element",
+  "repository": "nju33/iryo",
+  "author": "nju33 <nju33.ki@gmail.com>",
+  "license": "MIT",
+  "workspaces": [
+    "examples/iryo",
+    "packages/iryo"
+  ],
+  "scripts": {
+    "prepare": "lerna bootstrap",
+    "test": "if [ -z \"$CIRCLECI\" ]; then jest; else jest --coverage --coverageReporters=text-lcov | node_modules/.bin/coveralls; fi",
+    "rm-dist": "lerna exec --no-private -- rm -rf dist",
+    "dev": "lerna run dev --stream --scope iryo",
+    "dev:example": "lerna run dev --stream --scope @example/iryo",
+    "build": "lerna run build --stream --no-private",
+    "publish": "lerna publish",
+    "postpublish": "run-s push:*",
+    "push:example": "gh-pages --dist examples/iryo --src '{pages/**,*}' --branch @example/iryo --dotfiles"
+  },
+  "devDependencies": {
+    "@nju33/eslint-config": "0.0.26",
+    "@nju33/prettier": "0.0.26",
+    "@testing-library/dom": "^5.4.0",
+    "coveralls": "^3.0.4",
+    "eslint": "5.16.0",
+    "gh-pages": "2.0.1",
+    "lerna": "3.15.0",
+    "npm-run-all": "4.1.5",
+    "prettier": "1.18.2",
+    "renovate-config-nju33": "0.0.1",
+    "typescript": "3.5.2"
+  },
+  "dependencies": {}
+}

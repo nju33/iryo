@@ -1,0 +1,34 @@
+{
+	"folders": [
+		{
+			"name": "iryo",
+			"path": "./packages/iryo"
+		},
+		{
+			"name": "@example/iryo",
+			"path": "./examples/iryo"
+		},
+		{
+			"name": "<rootDir>",
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.cache": true,
+			"**/coverage": true,
+			"**/docs": true,
+			"**/node_modules": true
+		},
+		"files.watcherExclude": {
+			"**/.cache/**": true,
+			"**/coverage/**": true,
+			"**/docs/**": true
+		},
+		"search.exclude": {
+			"**/.cache": true,
+			"**/coverage": true,
+			"**/docs": true
+		}
+	}
+}
